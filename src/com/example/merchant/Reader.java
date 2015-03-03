@@ -37,10 +37,13 @@ public class Reader {
 
         if (line.endsWith(Reader.QUESTION)) {
             Store.getInstance().addQuery(line);
+
         } else if (line.toLowerCase().endsWith(Reader.CREDITS)) {
             Store.getInstance().addSample(line);
+
         } else if ((tokens.size() == 3) && tokens.get(1).equalsIgnoreCase(Reader.IS)) {
             Store.getInstance().putRoman(tokens.get(0), tokens.get(tokens.size() - 1).charAt(0));
+
         }
     }
 }
